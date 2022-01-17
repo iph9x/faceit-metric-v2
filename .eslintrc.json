@@ -18,6 +18,8 @@
     }],
     "@next/next/no-img-element": "off",
     "no-underscore-dangle": "off",
-    "react/jsx-props-no-spreading": "off"
+    "react/jsx-props-no-spreading": "off",
+    "arrow-body-style": "off",
+    "jsx-a11y/label-has-associated-control": "off"
   }
 }

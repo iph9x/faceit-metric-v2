@@ -165,7 +165,7 @@ const PlayerOverview: NextPage<PropsTypes> = ({
   }, [dispatch, matches, newData, lifetime, segments, nicknames, minElo, maxElo]);
 
   if (errorC) {
-    return <Error message={errorC} />
+    return <Error message={errorC} />;
   }
 
   return (

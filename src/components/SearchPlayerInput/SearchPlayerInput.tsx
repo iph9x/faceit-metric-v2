@@ -89,7 +89,7 @@ const SearchPlayerInput: FC = () => {
               ? players.map((item) => (
                 <li key={item.player_id}>
                   <button type="button" className={styles.listItem} onClick={() => handlePlayerPick(item.nickname)}>
-                    <img src={item?.avatar || "images/avatar.jpg"} alt="avatar" className={styles.listItemAvatar} />
+                    <img src={item?.avatar || 'images/avatar.jpg'} alt="avatar" className={styles.listItemAvatar} />
                     {item.nickname}
                   </button>
                 </li>

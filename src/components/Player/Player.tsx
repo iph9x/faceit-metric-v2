@@ -45,7 +45,7 @@ const Player: FC<PlayerProps> = ({
     <section className={styles.playerWrapper}>
       <div className={styles.container}>
         <div className={styles.info}>
-          <img src={playerInfo?.avatar || "images/avatar.jpg"} alt="avatar" className={styles.avatar} />
+          <img src={playerInfo?.avatar || 'images/avatar.jpg'} alt="avatar" className={styles.avatar} />
           <div>
             <h2 className={styles.nicknameWrapper}>
               <div className={styles.nickname}>
