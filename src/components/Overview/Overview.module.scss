@@ -1,0 +1,187 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+.container {
+  @include container;
+
+  max-width: 1190px;
+}
+
+.overviewTitle {
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.overview {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  font-size: 22px;
+  margin-bottom: 40px;
+  gap: 20px;
+}
+
+.statsBox {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px;
+  width: 100%;
+  border-radius: 10px;
+  background: $color-main-3;
+  padding: 20px 30px;
+}
+
+.statsHeader {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 20px;
+  
+  .statValue {
+    font-size: 40px;
+    font-weight: 700;
+    padding: 0;
+  }
+
+  .statName {
+    font-size: 20px;
+    font-weight: 300;
+    padding: 0;
+  }
+}
+
+.statsList {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  row-gap: 6px;
+  font-weight: 300;
+  font-size: 22px;
+}
+
+.statName {
+  text-transform: uppercase;
+  padding: 5px 0;
+}
+
+.statValue {
+  justify-self: end;
+  padding: 5px 0;
+}
+
+.matchesHeader {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr 2fr 3fr 4fr 3fr 2fr;
+  padding: 20px 0;
+  justify-items: center;
+  text-transform: uppercase;
+
+  .statItem {
+    font-weight: 400;
+    color: $color-main-8;
+  }
+}
+
+.matchItem {
+  display: grid;
+  grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr 2fr 3fr 4fr 3fr 2fr;
+  justify-items: center;
+
+  &:nth-child(even) {
+    background: $color-main-3;
+  }
+}
+
+.statItem {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 8px 0;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-align: center;
+}
+
+.number {
+  color: $color-main-8;
+  font-weight: 300;
+}
+
+.elo {
+  display: flex;
+  column-gap: 5px;
+}
+
+.date {
+  display: grid;
+  place-items: center;
+}
+
+.green {
+  color: $green;
+}
+
+.red {
+  color: $red;
+}
+
+@media screen and (max-width: 770px) {
+  .date,
+  .map {
+    display: none;
+  }
+
+  .matchesHeader {
+    grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr 2fr 3fr 2fr;
+  }
+
+  .matchItem {
+    grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr 2fr 3fr 2fr;
+  }
+}
+
+@media screen and (max-width: 628px) {
+  .hs,
+  .kr,
+  .team {
+    display: none;
+  }
+
+  .matchesHeader {
+    grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr;
+  }
+
+  .matchItem {
+    grid-template-columns: 1fr 1fr 3fr 2fr 3fr 2fr 2fr;
+  }
+}
+
+@media screen and (max-width: 432px) {
+  .kda {
+    display: none;
+  }
+
+  .matchesHeader {
+    grid-template-columns: 1fr 1fr 3fr 2fr 2fr 2fr;
+  }
+
+  .matchItem {
+    grid-template-columns: 1fr 1fr 3fr 2fr 2fr 2fr;
+  }
+}
+
+@media screen and (max-width: 350px) {
+  .number {
+    display: none;
+  }
+
+  .matchesHeader {
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr;
+  }
+
+  .matchItem {
+    grid-template-columns: 1fr 3fr 2fr 2fr 2fr;
+  }
+}

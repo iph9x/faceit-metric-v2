@@ -1,0 +1,11 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+.container {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

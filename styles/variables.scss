@@ -1,0 +1,17 @@
+$bg-10level: 
+    linear-gradient(45deg, transparent 50%, #ce3530 50%),
+    linear-gradient(-45deg, transparent 50%, #ce3530 50%);
+$bg-8level:
+    linear-gradient(45deg, transparent 50%, #e56a3b  50%),
+    linear-gradient(-45deg, transparent 50%, #e56a3b 50%);
+$bg-4level:
+    linear-gradient(45deg, transparent 50%, rgb(255, 200, 0) 50%),
+    linear-gradient(-45deg, transparent 50%, rgb(255, 200, 0) 50%);
+$bg-2level:
+    linear-gradient(45deg, transparent 50%, #36ae38 50%),
+    linear-gradient(-45deg, transparent 50%,  #36ae38 50%);
+$bg-1level:
+    linear-gradient(45deg, transparent 50%, rgb(238, 238, 238) 50%),
+    linear-gradient(-45deg, transparent 50%, rgb(238, 238, 238)  50%);
+
+$transition-duration: 0.1s;

@@ -1,0 +1,39 @@
+@import './variables.scss';
+
+.chart {
+    height: 11.5rem;
+    margin-bottom: 10px;
+    font-size: 1rem !important;
+
+    canvas {
+        margin-right: 0 !important;
+    }
+
+    &-title {
+        font-size: 25px;
+        text-align: center;
+        margin: 0 0 10px 0;
+        font-weight: 300;
+    }
+
+    &-wrapper {
+        width: 49%;
+        &:nth-child(1) {
+            width: 100%;
+        }
+        @media (max-width: 1024px) {
+            height: 21.96vw;
+        }
+    }
+
+    @media (max-width: 1024px) {
+        height: 17.96vw;
+    }
+}
+
+.charts-box {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,14 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+.container {
+  @include container;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - 150px);
+}
+
+.error {
+  font-size: 40px;
+}

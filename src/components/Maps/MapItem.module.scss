@@ -1,0 +1,67 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+.mapItem {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1190px;
+  margin-bottom: 40px;
+  padding: 30px;
+  border-radius: 20px;
+  background: $color-main-3;
+}
+
+.mapTitleWrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  column-gap: 20px;
+  font-size: 30px;
+
+  @media screen and (max-width: 400px) {
+    font-size: 25px;
+
+    img {
+      max-width: 80px;
+    }    
+  }
+}
+
+.card {
+  list-style: none;
+  border-radius: 20px;
+  background: $color-main-2;
+  padding: 20px 30px;
+}
+
+.statsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px 30px;
+  justify-content: space-evenly;
+}
+
+.cardItem {
+  display: flex;
+  margin-bottom: 10px;
+  justify-content: space-between;
+  min-width: 200px;
+  font-size: 20px;
+  
+  &:first-child {
+    flex-direction: column;
+    font-size: 36px;
+    align-items: center;
+    margin-bottom: 15px;
+
+    .statTitle {
+      font-size: 20px;
+    }
+  }
+}
+
+.statTitle {
+  color: $color-main-8;
+}

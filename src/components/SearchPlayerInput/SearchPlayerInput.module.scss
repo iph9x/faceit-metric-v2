@@ -1,0 +1,174 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+$input-width: 300px;
+$search-button-size: 40px;
+$skeleton-bg: $color-main-6;
+
+.wrapper {
+  width: 100%;
+}
+
+.form {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  max-width: $input-width;
+  width: 100%;
+  margin-right: 20px;
+}
+
+.input {
+  max-width: $input-width;
+  width: 100%;
+  height: 40px;
+  font-size: 1.1rem;
+  border-radius: 6px 0 0 6px;
+  border: 2px solid transparent;
+  padding: 0 1rem;
+  font-weight: 300;
+  background: $search-input-bg;
+  transition:
+    border $transition-duration,
+    background $transition-duration;
+  color: $color-main-7;
+
+  &::placeholder {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    color: $color-main-6;
+  }
+
+  &:hover {
+    background: $search-input-bg-hover;
+  }
+
+  &:active,
+  &:focus  {
+    color: $text-color;
+    background: $search-input-bg-active;
+    outline: none;
+    border: 2px solid rgb(34, 100, 243);
+
+    &::placeholder {
+      color: $color-main-8;
+    }
+  }
+}
+
+.submitButton {
+  color: $color-main-7;
+  height: $search-button-size;
+  width: $search-button-size;
+  border: none;
+  z-index: 10;
+  cursor: pointer;
+  background: $search-input-bg;
+  border-radius: 0 6px 6px 0;
+  transition: $transition-duration;
+
+  &:hover {
+    background: $search-input-bg-hover;
+  }
+
+  &:disabled {
+    cursor: no-drop;
+
+    &:hover {
+      background: $search-input-bg;
+      border: none;
+      // color: $color-main-1;
+    }
+  }
+}
+
+.clearButton {
+  z-index: 2;
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.dropdown {
+  position: absolute;
+  max-width: calc(#{$input-width} - #{$search-button-size} + 4px);
+  width: 100%;
+  height: auto;
+  left: 0;
+  top: calc(100%);
+  z-index: 2;
+  box-shadow: 0px 0px 20px 0px rgba(43, 43, 43, 0.2);
+  background: $color-main-2;
+  backdrop-filter: blur(10px) saturate(180%);
+}
+
+.listItem {
+  display: flex;
+  align-items: center;
+  padding: 10px 10px;
+  height: 50px;
+  list-style-type: none;
+  width: 100%;
+  color: $text-color;
+  transition: background-color $transition-duration;
+  background: none;
+  border: none;
+  border-bottom: 1px solid $color-main-4;
+  cursor: pointer;
+
+  &:hover {
+    background-color: $color-main-3;
+  }
+
+  &:not(:first-child) {
+    border-top: 1px solid $color-main-1;
+  }
+
+  &.skeleton {
+    animation: pulse 1.5s infinite;
+
+    .listItem {
+      width: 100%;
+    }
+    
+    .skeletonNick {
+      background: $skeleton-bg;
+      width: 100%;
+      height: 10px;
+      border-radius: 5px;
+    }
+
+    .listItemAvatar {
+      background: $skeleton-bg;
+    }
+  }
+}
+
+.listItemAvatar {
+  width: 100%;
+  max-width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  margin-right: 10px;
+  background: #fff;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
+  100% {
+    opacity: 1;
+  }
+}

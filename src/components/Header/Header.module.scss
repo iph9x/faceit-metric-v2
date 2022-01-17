@@ -1,0 +1,109 @@
+@import 'styles/variables.scss';
+@import 'styles/palette.scss';
+@import 'styles/mixins.scss';
+
+$input-width: 400px;
+$search-button-size: 40px;
+
+.header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 70px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 5;
+  box-shadow: 0px 2px 5px $header-shadow-color;
+  background: $color-main-3;
+}
+
+.container {
+  @include container;
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+  background: #242526;
+  border-radius: 4px;
+  cursor: pointer;
+
+  @media screen and (max-width: 400px) {
+    max-width: 40px;
+    max-height: 40px;
+    margin-right: 10px;
+  }
+}
+
+.toggleLight,
+.toggleDark {
+  position: absolute;
+  top: 50%;
+  line-height: 1;
+  transform: translateY(-50%) translateY(1px);
+  transition: 0.1s;
+  right: 8px;
+  user-select: none;
+}
+
+.toggleDark {
+  opacity: 0;
+}
+
+.toggleLight {
+  opacity: 1;
+}
+
+[data-theme=dark] {
+  & .toggleDark {
+    opacity: 1;
+    left: 4px;
+  }
+
+  & .toggleLight {
+    opacity: 0;
+  }
+}
+
+.checkbox {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+
+  &:checked {
+    & + .label {
+      &::after {
+        left: 28px;
+        background: #292f35;
+      }
+    }
+
+  }
+}
+
+.label {
+  position: relative;
+  display: block;
+  max-width: 50px;
+  width: 100%;
+  height: 24px;
+  margin-left: 10px;
+  border-radius: 30px;
+  background: #292f35;
+  cursor: pointer;
+  background: $color-main-9;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    transition: left .1s;
+  }
+}

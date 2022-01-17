@@ -1,0 +1,136 @@
+@import './variables.scss';
+@import './palette.scss';
+
+:root {
+  --search-input-bg: var(--color-gray-200);
+  --search-input-bg-hover: #fff;
+  --search-button-bg: #eaecee;
+  --search-button-bg-hover: var(--color-gray-200);
+  --bg: #fff;
+  --color-text: #333333;
+
+  --color-header-bg: #fff;
+
+  --color-gray-100: #eff1f3;
+  --color-gray-200: #e6e9ec;
+  --color-gray-300: #d5d9dd;
+  --color-gray-400: #ccd0d5;
+  --color-gray-500: #a9afb6;
+  --color-gray-600: #626264;
+  --color-gray-700: #3a3a3b;
+  --color-gray-800: #2a2b2c;
+  --color-gray-900: #1a1c1f;
+
+  --color-dark-1: #001a2c;
+  --color-dark-2: #002137;
+  --color-dark-3: #00253e;
+  --color-dark-4: #002945;
+  --color-dark-5: #002e4e;
+  --color-dark-6: #003356;
+  --color-dark-7: #003a61;
+  --color-dark-8: #6f96af;
+  --color-dark-9: #fff;
+
+  --color-light-1: hsl(215, 46%, 95%);
+  --color-light-2: hsl(218, 49%, 92%);
+  --color-light-3: hsl(215, 46%, 90%);
+  --color-light-4: hsl(215, 46%, 87%);
+  --color-light-5: hsl(214, 38%, 79%);
+  --color-light-6: hsl(217, 65%, 70%);
+  --color-light-7: hsl(216, 41%, 60%);
+  --color-light-8: hsl(216, 47%, 26%);
+  --color-light-9: #000;
+
+  --color-main-1: var(--color-light-1);
+  --color-main-2: var(--color-light-2);
+  --color-main-3: var(--color-light-3);
+  --color-main-4: var(--color-light-4);
+  --color-main-5: var(--color-light-5);
+  --color-main-6: var(--color-light-6);
+  --color-main-7: var(--color-light-7);
+  --color-main-8: var(--color-light-8);
+  --color-main-9: var(--color-light-9);
+
+  --green: #358b2e;
+  --white: #fff;
+  --black: #000;
+  --red: #f03b51;
+
+  --search-input-bg: #f1f7fa;
+  --search-input-bg-hover: #ecf2f5;
+  --search-input-bg-active: var(--white);
+
+  &[data-theme='dark'] {
+    --search-input-bg: #36393a;
+    --search-button-bg: #313435;
+
+    --search-input-bg-hover: #000;
+    --search-button-bg-hover: var(--black);
+
+    --search-input-bg-active: var(--black);
+    --bg: #333333;
+    --color-text: #fff;
+
+    --search-input-bg: hsl(216, 41%, 59%);
+    --search-input-bg-hover: hsl(216, 34%, 54%);
+
+    --color-header-bg: #242526;
+
+    --color-main-1: var(--color-dark-1);
+    --color-main-2: var(--color-dark-2);
+    --color-main-3: var(--color-dark-3);
+    --color-main-4: var(--color-dark-4);
+    --color-main-5: var(--color-dark-5);
+    --color-main-6: var(--color-dark-6);
+    --color-main-7: var(--color-dark-7);
+    --color-main-8: var(--color-dark-8);
+    --color-main-9: var(--color-dark-9);
+
+    --green: #51df44;
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: Roboto, -apple-system, BlinkMacSystemFont, Segoe UI, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background: $color-main-1;
+  color: $text-color;
+  overflow-x: hidden;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+.btn-spinner {
+  height: 1.5em;
+  width: 1.5em;
+  border-radius: 50%;
+  font-size: 12px;
+  border: 0.3em solid $color-main-8;
+  border-left: 0.3em solid transparent;
+  animation: spin 0.8s infinite linear;
+}
+
+ul {
+  list-style: none;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,21 @@
+@import 'styles/palette.scss';
+@import 'styles/variables.scss';
+
+.link {
+  font-size: 15px;
+  color: $color-main-4;
+  transition: color $transition-duration;
+
+  &:hover {
+    color: $color-main-5;
+  }
+}
+
+.active {
+  color: $text-color;
+
+  &:hover {
+    color: $text-color;
+
+  }
+}
